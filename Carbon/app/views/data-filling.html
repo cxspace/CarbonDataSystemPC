@@ -1,0 +1,760 @@
+<!-- 数据填报年月选择 -->
+<br/>
+<br/>
+
+
+
+
+<div class="topic_datafill" ng-controller="DataFillingController">
+
+
+     <div class="row">
+     
+            <div class="col-md-3 col-sm-12">
+
+
+
+                <!--Three line list with icon -->
+                <ul class="list-group pmd-z-depth pmd-list pmd-card-list">
+
+                    <!--&lt;!&ndash;Accordion with icons &ndash;&gt;-->
+                    <!--<div class="panel-group pmd-accordion" id="accordion3" role="tablist" aria-multiselectable="true" >-->
+                        <!--<div class="panel">-->
+                            <!--<div class="panel-heading" role="tab" id="headingOne">-->
+                                <!--<h4 class="panel-title">-->
+                                    <!--<a data-toggle="collapse"  target=_self  data-parent="#accordion3" href="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3" data-expandable="false"><i class="material-icons pmd-sm pmd-accordion-icon-left">account_box</i> 个人信息 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>-->
+                                <!--</h4>-->
+                            <!--</div>-->
+                            <!--<div id="collapseOne3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">-->
+                                <!--<div class="panel-body">The word "accordion" typically conjures a mental image of your favorite polka band. However that’s not what we are talking about when referring to accordion menu. Although polka music can offer a rip-snorting good time, the term is associated with something different in the realm of web design. User interface accordions might refer to menus, widgets, or content areas which expand like the musical instrument. These interfaces have grown a lot more popular in recent years with the expansion of JavaScript.</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                    <!--</div> &lt;!&ndash;Accordion with icons end &ndash;&gt;-->
+
+                    <li class="list-group-item">
+                        <i class="material-icons media-left pmd-sm">account_box</i>
+                        <div class="media-body">
+                            <h3 class="list-group-item-heading">
+
+                                <!--Title, Media, and Action area -->
+                                <div class="pmd-card pmd-card-media-inline pmd-card-default pmd-z-depth-1">
+                                    <!-- Card media-->
+                                    <div class="pmd-card-media">
+                                        <!-- Card media heading -->
+                                        <div class="media-body">
+                                            <h2 class="pmd-card-title-text">南昌大学</h2>
+                                            <span class="pmd-card-subtitle-text"><a style="font-size: 18px">企业用户</a></span>
+                                        </div>
+
+                                        <!-- Card media image -->
+                                        <div class="media-right media-middle">
+                                            <a href="javascript:void(0);">
+                                                <img width="112" height="112" src="http://propeller.in/assets/images/profile-pic.png">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card action -->
+                                    <div class="pmd-card-actions">
+                                        <button class="btn pmd-btn-outline pmd-ripple-effect btn-default" type="button"><a style="font-size: 17px">个人主页</a></button>
+                                        <button type="button" class="btn pmd-btn-outline pmd-ripple-effect btn-default" ui-sref="app.carbon-report"><a style="font-size: 17px">我的报告</a></button>
+                                    </div>
+                                </div>
+
+                            </h3>
+                        </div>
+                    </li>
+
+
+                    <li class="list-group-item">
+                        <i class="material-icons media-left pmd-sm">date_range</i>
+                        <div class="media-body">
+                            <h3 class="list-group-item-heading">
+                                <button class="btn btn-sm pmd-btn-outline pmd-ripple-effect btn-default" ui-sref="app.data-filling" style="width: 100%" data-toggle="tooltip" data-placement="bottom" title="可按年度或月度进行碳数据采集、填报, 并将月度填报数据汇总到年度数据"><h3 class="font_s2">选择填报年月</h3></button>
+                            </h3>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="material-icons media-left">build</i>
+                        <div class="media-body">
+                            <h3 class="list-group-item-heading">
+                                <button type="button" class="btn btn-sm  pmd-btn-outline pmd-ripple-effect btn-default"  style="width: 100%" data-toggle="tooltip" data-placement="bottom" title="平台提供常用的碳数据模型 , 让您更方便的填报"><h3 class="font_s2">配置数据类型</h3></button>
+                            </h3>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="material-icons media-left">border_color</i>
+                        <div class="media-body">
+                            <h3 class="list-group-item-heading">
+                                <button type="button" class="btn btn-sm  pmd-btn-outline pmd-ripple-effect btn-default"  style="width: 100%" data-toggle="tooltip" data-placement="bottom" title="数据填报人员填报或者导入数据 , 系统会自动分析并存储入数据库"><h3 class="font_s2">填报行业数据</h3></button>
+                            </h3>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="material-icons media-left">content_paste</i>
+                        <div class="media-body">
+                            <h3 class="list-group-item-heading">
+                                <button type="button" class="btn btn-sm  pmd-btn-outline pmd-ripple-effect btn-default" style="width: 100%" data-toggle="tooltip" data-placement="bottom" title="根据所填数据 , 系统自动分析并生成数据报告"><h3 class="font_s2">生成碳报告</h3></button>
+                            </h3>
+                        </div>
+                    </li>
+
+
+
+                </ul>
+
+
+
+
+            </div>    
+
+            <div class="col-md-9 col-sm-12">
+
+
+                <!--Scrollable tab example -->
+                <div class="pmd-card pmd-z-depth">
+                    <div class="pmd-tabs pmd-tabs-scroll pmd-tabs-bg">
+                        <div class="pmd-tabs-scroll-left" style="background-color: #0c0c0c"><i class="material-icons pmd-sm">chevron_left</i></div>
+                        <div class="pmd-tabs-scroll-container pmd-z-depth" style="background-color: #0c0c0c">
+                            <div class="pmd-tab-active-bar"></div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#2014" target=_self aria-controls="home" role="tab" data-toggle="tab">2014</a></li>
+                                <li role="presentation"><a href="#2015" target=_self aria-controls="home" role="tab" data-toggle="tab">2015</a></li>
+                                <li role="presentation"><a href="#2016" target=_self aria-controls="about" role="tab" data-toggle="tab">2016</a></li>
+                            </ul>
+                        </div>
+                        <div class="pmd-tabs-scroll-right" style="background-color: #0c0c0c"><i class="material-icons pmd-sm">chevron_right</i></div>
+                    </div>
+
+
+
+
+                    <div class="pmd-card-body">
+                        <div class="tab-content">
+
+
+
+                            <div role="tabpanel" class="tab-pane active" id="2014">
+
+                                <div class="row">
+
+                                    <div class="col-md-6 col-sm-12">
+
+                                        <!--List with title and linked content -->
+                                        <div class="list-group pmd-z-depth pmd-card-list">
+
+                                            <a ng-click="doUpdateMonth(2014,1)" class="list-group-item " ng-show="Submit.isSubmit20141">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">一月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,1)" class="list-group-item " ng-show="!Submit.isSubmit20141">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">一月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20141">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2014,2)" class="list-group-item " ng-show="Submit.isSubmit20142">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">二月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,2)" class="list-group-item " ng-show="!Submit.isSubmit20142">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">二月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20142">未填报</p>
+                                            </a>
+
+
+
+                                            <a ng-click="doUpdateMonth(2014,3)" class="list-group-item " ng-show="Submit.isSubmit20143">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">三月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,3)" class="list-group-item " ng-show="!Submit.isSubmit20143">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">三月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20143">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2014,4)" class="list-group-item " ng-show="Submit.isSubmit20144">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">四月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,4)" class="list-group-item " ng-show="!Submit.isSubmit20144">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">四月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20144">未填报</p>
+                                            </a>
+
+                                            <a ng-click="doUpdateMonth(2014,5)" class="list-group-item " ng-show="Submit.isSubmit20145">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">五月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,5)" class="list-group-item " ng-show="!Submit.isSubmit20145">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">五月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20145">未填报</p>
+                                            </a>
+
+
+
+
+                                            <a ng-click="doUpdateMonth(2014,6)" class="list-group-item " ng-show="Submit.isSubmit20146">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">六月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,6)" class="list-group-item " ng-show="!Submit.isSubmit20146">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">六月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20146">未填报</p>
+                                            </a>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12">
+
+                                        <!--List with title and linked content -->
+                                        <div class="list-group pmd-z-depth pmd-card-list">
+
+                                            <a ng-click="doUpdateMonth(2014,7)" class="list-group-item " ng-show="Submit.isSubmit20147">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">七月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,7)" class="list-group-item " ng-show="!Submit.isSubmit20147">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">七月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit2017">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2014,8)" class="list-group-item " ng-show="Submit.isSubmit20148">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">八月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,8)" class="list-group-item " ng-show="!Submit.isSubmit20148">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">八月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20148">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2014,9)" class="list-group-item " ng-show="Submit.isSubmit20149">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">九月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,9)" class="list-group-item " ng-show="!Submit.isSubmit20149">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">九月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20149">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2014,10)" class="list-group-item " ng-show="Submit.isSubmit201410">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,10)" class="list-group-item " ng-show="!Submit.isSubmit201410">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201410">未填报</p>
+                                            </a>
+
+                                            <a ng-click="doUpdateMonth(2014,11)" class="list-group-item " ng-show="Submit.isSubmit201411">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十一月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,11)" class="list-group-item " ng-show="!Submit.isSubmit201411">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十一月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201411">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2014,12)" class="list-group-item " ng-show="Submit.isSubmit201412">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十二月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2014,12)" class="list-group-item " ng-show="!Submit.isSubmit201412">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十二月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201412">未填报</p>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <br/>
+
+                                <button class="btn btn-block  pmd-btn-outline pmd-ripple-effect btn-default"  data-target="#simple-listing-dialog" data-toggle="modal" type="button"><span style="font-size: 20px">直接导入所有年度月度数据</span></button>
+
+                                <button class="btn btn-block  pmd-btn-outline pmd-ripple-effect btn-default" ui-sref="app.carbon-report"  type="button"><span style="font-size: 20px">生成碳报告</span></button>
+
+
+                                <div tabindex="-1" class="modal fade" id="simple-listing-dialog" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header pmd-modal-bordered">
+                                                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                <h2 class="pmd-card-title-text">数据导入</h2>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-1 col-sm-12">
+
+                                                </div>
+
+                                                <div class="col-md-5 col-sm-12">
+
+                                                    <div class="pmd-card pmd-z-depth">
+                                                        <div class="table-responsive">
+                                                            <table class="table pmd-table table-bordered">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>年份</th>
+                                                                    <th>月份</th>
+                                                                    <th>碳排量(吨)</th>
+
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td data-title="year">2014</td>
+                                                                    <td data-title="month">3</td>
+                                                                    <td data-title="value">34.80</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td colspan="3">
+                                                                        按此表格式填写数据     <a href="http://121.42.184.102/Carbon/excel_template/template.xlsx" target="_blank" class="btn btn-block  pmd-btn-outline pmd-ripple-effect btn-default"  type="button">下载excel模板</a>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="col-md-5 col-sm-12">
+
+                                                    <form>
+                                                                <!-- Primary flat block button with ripple effect -->
+                                                           <input type="file" ngf-select ng-model="file" ngf-max-size="20MB">Select</input>
+                                                                <!-- Primary flat block button with ripple effect -->
+
+
+                                                           <br/>
+
+                                                                <!-- Bootstrap progressbar of blue color -->
+                                                           <div class="progress-rounded progress">
+                                                                    <div class="progress-bar progress-bar-info" ng-style="{width:progressPercentage+'%'}"></div>
+                                                           </div>
+
+                                                           <br/>
+
+
+                                                                <!-- Primary flat block button with ripple effect -->
+                                                           <button ng-click="uploadFile()" class="btn btn-block  pmd-btn-outline pmd-ripple-effect btn-default"  type="submit">导入数据</button>
+
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+
+                                      </div>
+                                    </div>
+
+
+                               </div>
+                         </div>
+
+
+
+
+
+
+                            <div role="tabpanel" class="tab-pane" id="2015">
+
+
+                                    <div class="row">
+
+                                    <div class="col-md-6 col-sm-12">
+
+                                        <!--List with title and linked content -->
+                                        <div class="list-group pmd-z-depth pmd-card-list">
+
+                                            <a ng-click="doUpdateMonth(2015,1)" class="list-group-item " ng-show="Submit.isSubmit20151">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">一月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,1)" class="list-group-item " ng-show="!Submit.isSubmit20151">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">一月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20151">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2015,2)" class="list-group-item " ng-show="Submit.isSubmit20152">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">二月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,2)" class="list-group-item " ng-show="!Submit.isSubmit20152">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">二月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20152">未填报</p>
+                                            </a>
+
+
+
+                                            <a ng-click="doUpdateMonth(2015,3)" class="list-group-item " ng-show="Submit.isSubmit20153">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">三月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,3)" class="list-group-item " ng-show="!Submit.isSubmit20153">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">三月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20153">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2015,4)" class="list-group-item " ng-show="Submit.isSubmit20154">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">四月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,4)" class="list-group-item " ng-show="!Submit.isSubmit20154">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">四月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20154">未填报</p>
+                                            </a>
+
+                                            <a ng-click="doUpdateMonth(2015,5)" class="list-group-item " ng-show="Submit.isSubmit20155">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">五月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,5)" class="list-group-item " ng-show="!Submit.isSubmit20155">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">五月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20155">未填报</p>
+                                            </a>
+
+
+
+
+                                            <a ng-click="doUpdateMonth(2015,6)" class="list-group-item " ng-show="Submit.isSubmit20156">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">六月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,6)" class="list-group-item " ng-show="!Submit.isSubmit20156">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">六月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20156">未填报</p>
+                                            </a>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12">
+
+                                        <!--List with title and linked content -->
+                                        <div class="list-group pmd-z-depth pmd-card-list">
+
+                                            <a ng-click="doUpdateMonth(2015,7)" class="list-group-item " ng-show="Submit.isSubmit20157">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">七月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,7)" class="list-group-item " ng-show="!Submit.isSubmit20157">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">七月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit2015">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2015,8)" class="list-group-item " ng-show="Submit.isSubmit20158">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">八月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,8)" class="list-group-item " ng-show="!Submit.isSubmit20158">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">八月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20158">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2015,9)" class="list-group-item " ng-show="Submit.isSubmit20159">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">九月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,9)" class="list-group-item " ng-show="!Submit.isSubmit20159">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">九月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20159">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2015,10)" class="list-group-item " ng-show="Submit.isSubmit201510">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,10)" class="list-group-item " ng-show="!Submit.isSubmit201510">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201510">未填报</p>
+                                            </a>
+
+                                            <a ng-click="doUpdateMonth(2015,11)" class="list-group-item " ng-show="Submit.isSubmit201511">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十一月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,11)" class="list-group-item " ng-show="!Submit.isSubmit201511">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十一月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201511">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2015,12)" class="list-group-item " ng-show="Submit.isSubmit201512">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十二月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2015,12)" class="list-group-item " ng-show="!Submit.isSubmit201512">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十二月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201512">未填报</p>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="2016">
+
+                                <div class="row">
+
+                                    <div class="col-md-6 col-sm-12">
+
+                                        <!--List with title and linked content -->
+                                        <div class="list-group pmd-z-depth pmd-card-list">
+
+                                            <a ng-click="doUpdateMonth(2016,1)" class="list-group-item " ng-show="Submit.isSubmit20161">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">一月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,1)" class="list-group-item " ng-show="!Submit.isSubmit20161">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">一月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20161">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2016,2)" class="list-group-item " ng-show="Submit.isSubmit20162">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">二月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,2)" class="list-group-item " ng-show="!Submit.isSubmit20162">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">二月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20162">未填报</p>
+                                            </a>
+
+
+
+                                            <a ng-click="doUpdateMonth(2016,3)" class="list-group-item " ng-show="Submit.isSubmit20163">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">三月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,3)" class="list-group-item " ng-show="!Submit.isSubmit20163">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">三月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20163">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2016,4)" class="list-group-item " ng-show="Submit.isSubmit20164">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">四月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,4)" class="list-group-item " ng-show="!Submit.isSubmit20164">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">四月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20164">未填报</p>
+                                            </a>
+
+                                            <a ng-click="doUpdateMonth(2016,5)" class="list-group-item " ng-show="Submit.isSubmit20165">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">五月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,5)" class="list-group-item " ng-show="!Submit.isSubmit20165">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">五月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20165">未填报</p>
+                                            </a>
+
+
+
+
+                                            <a ng-click="doUpdateMonth(2016,6)" class="list-group-item " ng-show="Submit.isSubmit20166">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">六月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,6)" class="list-group-item " ng-show="!Submit.isSubmit20166">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">六月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20166">未填报</p>
+                                            </a>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12">
+
+                                        <!--List with title and linked content -->
+                                        <div class="list-group pmd-z-depth pmd-card-list">
+
+                                            <a ng-click="doUpdateMonth(2016,7)" class="list-group-item " ng-show="Submit.isSubmit20167">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">七月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,7)" class="list-group-item " ng-show="!Submit.isSubmit20167">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">七月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20167">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2016,8)" class="list-group-item " ng-show="Submit.isSubmit20168">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">八月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,8)" class="list-group-item " ng-show="!Submit.isSubmit20168">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">八月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20168">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2016,9)" class="list-group-item " ng-show="Submit.isSubmit20169">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">九月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,9)" class="list-group-item " ng-show="!Submit.isSubmit20169">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">九月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit20169">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2016,10)" class="list-group-item " ng-show="Submit.isSubmit201610">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,10)" class="list-group-item " ng-show="!Submit.isSubmit201610">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201610">未填报</p>
+                                            </a>
+
+                                            <a ng-click="doUpdateMonth(2016,11)" class="list-group-item " ng-show="Submit.isSubmit201611">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十一月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,11)" class="list-group-item " ng-show="!Submit.isSubmit201611">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十一月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201611">未填报</p>
+                                            </a>
+
+
+                                            <a ng-click="doUpdateMonth(2016,12)" class="list-group-item " ng-show="Submit.isSubmit201612">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十二月</span></h3>
+                                                <p class="list-group-item-text">修改数据</p>
+                                            </a>
+
+
+                                            <a ng-click="doSelectMonth(2016,12)" class="list-group-item " ng-show="!Submit.isSubmit201612">
+                                                <h3 class="list-group-item-heading"> <span style="font-size: 18px">十二月</span></h3>
+                                                <p class="list-group-item-text" ng-show="!Submit.isSubmit201612">未填报</p>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--Scrollable tab example end-->
+                                                                                   
+           
+            </div>    
+           
+
+     </div>
+    <br/>
+    <br/>
+    <br/>
+</div>
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+<script type="text/javascript">
+    $(document).ready( function() {
+        $('.pmd-tabs').pmdTab();
+        $('[data-toggle="tooltip"]').tooltip()
+
+    });
+</script>

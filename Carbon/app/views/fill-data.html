@@ -1,0 +1,227 @@
+<!--填报数据-->
+<br/>
+<br/>
+
+
+<div class="topic_datafill" ng-controller="FillDataController">
+
+
+    <div class="row">
+
+        <div class="col-md-3 col-sm-12">
+
+
+
+            <!--Three line list with icon -->
+            <ul class="list-group pmd-z-depth pmd-list pmd-card-list">
+
+
+                <li class="list-group-item">
+                    <i class="material-icons media-left pmd-sm">account_box</i>
+                    <div class="media-body">
+                        <h3 class="list-group-item-heading">
+
+                            <!--Title, Media, and Action area -->
+                            <div class="pmd-card pmd-card-media-inline pmd-card-default pmd-z-depth-1">
+                                <!-- Card media-->
+                                <div class="pmd-card-media">
+                                    <!-- Card media heading -->
+                                    <div class="media-body">
+                                        <h2 class="pmd-card-title-text">南昌大学</h2>
+                                        <span class="pmd-card-subtitle-text"><a style="font-size: 18px">企业用户</a></span>
+                                    </div>
+
+                                    <!-- Card media image -->
+                                    <div class="media-right media-middle">
+                                        <a href="javascript:void(0);">
+                                            <img width="112" height="112" src="http://propeller.in/assets/images/profile-pic.png">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Card action -->
+                                <div class="pmd-card-actions">
+                                    <button class="btn pmd-btn-outline pmd-ripple-effect btn-default" type="button"><a style="font-size: 17px">个人主页</a></button>
+                                    <button type="button" class="btn pmd-btn-outline pmd-ripple-effect btn-default"><a style="font-size: 17px">我的报告</a></button>
+                                </div>
+                            </div>
+
+                        </h3>
+                    </div>
+                </li>
+
+
+                <li class="list-group-item">
+                    <i class="material-icons media-left pmd-sm">date_range</i>
+                    <div class="media-body">
+                        <h3 class="list-group-item-heading">
+                            <button class="btn btn-sm pmd-btn-outline pmd-ripple-effect btn-default" ui-sref="app.data-filling" style="width: 100%" data-toggle="tooltip" data-placement="bottom" title="可按年度或月度进行碳数据采集、填报, 并将月度填报数据汇总到年度数据"><h3 class="font_s2">选择填报年月</h3></button>
+                        </h3>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <i class="material-icons media-left">build</i>
+                    <div class="media-body">
+                        <h3 class="list-group-item-heading">
+                            <button type="button" class="btn btn-sm  pmd-btn-outline pmd-ripple-effect btn-default"  style="width: 100%" data-toggle="tooltip" data-placement="bottom" title="平台提供常用的碳数据模型 , 让您更方便的填报"><h3 class="font_s2">配置数据类型</h3></button>
+                        </h3>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <i class="material-icons media-left">border_color</i>
+                    <div class="media-body">
+                        <h3 class="list-group-item-heading">
+                            <button type="button" class="btn btn-sm  pmd-btn-outline pmd-ripple-effect btn-default" style="width: 100%" data-toggle="tooltip" data-placement="bottom" title="数据填报人员填报或者导入数据 , 系统会自动分析并存储入数据库"><h3 class="font_s2">填报行业数据</h3></button>
+                        </h3>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <i class="material-icons media-left">content_paste</i>
+                    <div class="media-body">
+                        <h3 class="list-group-item-heading">
+                            <button type="button" class="btn btn-sm  pmd-btn-outline pmd-ripple-effect btn-default" style="width: 100%" data-toggle="tooltip" data-placement="bottom" title="根据所填数据 , 系统自动分析并生成数据报告"><h3 class="font_s2">生成碳报告</h3></button>
+                        </h3>
+                    </div>
+                </li>
+
+
+            </ul>
+
+            <br/>
+
+
+
+        </div>
+
+        <div class="col-md-9 col-sm-12">
+
+
+            <!--Scrollable tab example -->
+            <div class="pmd-card pmd-z-depth">
+                <div class="pmd-tabs pmd-tabs-scroll pmd-tabs-bg">
+                    <div class="pmd-tabs-scroll-left" style="background-color: #0c0c0c"><i class="material-icons pmd-sm">chevron_left</i></div>
+                    <div class="pmd-tabs-scroll-container pmd-z-depth" style="background-color: #0c0c0c">
+                        <div class="pmd-tab-active-bar"></div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#config" target=_self aria-controls="home" role="tab" data-toggle="tab"><span class="nav_font1">填报数据</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="pmd-tabs-scroll-right" style="background-color: #0c0c0c"><i class="material-icons pmd-sm">chevron_right</i></div>
+                </div>
+                <div class="pmd-card-body">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="config">
+
+                            <div class="row">
+
+                                    <div class="col-md-5 col-sm-12">
+
+                                        <!-- Readonly Input -->
+                                        <div class="form-group pmd-textfield">
+                                            <label for="year" class="control-label">
+                                                {{selectYear}}年
+                                            </label>
+                                            <input type="text" readonly="" id="year" class="mat-input form-control">
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+                                    <div class="col-md-5 col-sm-12">
+
+                                        <!-- Readonly Input -->
+                                        <div class="form-group pmd-textfield">
+                                            <label for="month" class="control-label">
+                                                {{selectMonth}}月
+                                            </label>
+                                            <input type="text"readonly=""  id="month" class="mat-input form-control">
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-12">
+
+                                        <button type="button" class="btn btn-sm  pmd-btn-outline pmd-ripple-effect btn-default" ui-sref="app.data-filling" style="width: 100px ; height: 50px"><span class="nav_font1">重新选择</span></button>
+
+                                    </div>
+
+
+                            </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12">
+
+
+
+                                        <!-- Large Input -->
+                                        <div class="form-group pmd-textfield form-group-lg">
+                                            <label for="large" class="control-label">总量（吨）</label>
+                                            <input ng-model="carbonVolum.weight" type="number" id="large" class="form-control input-group-lg" placeholder="0.00">
+                                        </div>
+                                        <div class="alert alert-success" role="alert" ng-show="isSubmitSuccess">
+                                            你成功的提交了该月份的数据!您可以选择继续填报,或者直接生成报告.
+                                        </div>
+
+                                        <br/>
+
+
+
+
+                                    </div>
+
+                                    <br/>
+
+
+                                    <div class="col-md-4 col-sm-12">
+
+                                        <button ng-show="!isSubmitSuccess" ng-click="submitData()" class="btn btn-block  pmd-btn-outline pmd-ripple-effect btn-default" type="button"><span style="font-size: 20px">提交数据</span></button>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-12">
+
+                                        <button ng-show="isSubmitSuccess" ui-sref="app.data-filling" class="btn btn-block  pmd-btn-outline pmd-ripple-effect btn-default" type="button"><span style="font-size: 20px">继续填报</span></button>
+
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-12">
+
+                                        <button ng-show="isSubmitSuccess" ng-click="" class="btn btn-block  pmd-btn-outline pmd-ripple-effect btn-default" ui-sref="app.carbon-report" type="button"><span style="font-size: 20px">生成碳报告</span></button>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                    </div>
+                </div>
+            </div> <!--Scrollable tab example end-->
+
+
+        </div>
+
+
+    </div>
+    <br/>
+    <br/>
+    <br/>
+</div>
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+<script type="text/javascript">
+    $(document).ready( function() {
+        $('.pmd-tabs').pmdTab();
+        $('[data-toggle="tooltip"]').tooltip()
+
+    });
+</script>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='carbonApp'>
+
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head
+         content must come *after* these tags -->
+    <title>碳分析</title>
+    <!-- Bootstrap -->
+
+
+    <link rel="stylesheet" href="styles/main-53ba52f4f4.css"/>
+    <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+    
+       <!--Google Icon Font-->
+       <!-- 这个是有毒的 -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       
+    <style>
+
+body{font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;}
+
+        .nav_font1 {
+            font-size: 18px;
+        } 
+
+        .header_section{
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-image: url(./images/banner.jpg);
+            width: 100%;
+            padding-top: 100px;
+            height: 680px;
+        }
+
+
+        .topic_one{
+            background-color: rgb(236,240,245); 
+            padding-top: 50px;
+
+        }
+
+        .topic_datafill{
+            background-color: rgb(236,240,245);
+            padding-top: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .topic_two{
+            background-color: #FFFFFF; 
+            padding-top: 40px;
+        }
+
+
+        .topic_three{
+            background-color: rgb(236,240,245); 
+        }
+
+        .font_s1{
+            font-size:17px;
+        }
+        .font_s2{
+            font-size:20px;
+        }
+
+        .font_s3{
+            font-size:25px;
+        }
+
+        .font_s4{
+            font-size:30px;
+        }
+
+        
+
+
+    </style> 
+      
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+   <div ui-view="header"></div>
+   <div ui-view="content"></div>
+   <div ui-view="footer"></div>
+
+    <script src="scripts/main-5e3afb0c1e.js"></script>
+
+</body>
+
+
+</html>
